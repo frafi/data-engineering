@@ -42,7 +42,7 @@ class SalesImport < ActiveRecord::Base
       	next
       end
 
-      item_price = BigDecimal.new(row[4].to_s.strip) rescue nil
+      item_price = BigDecimal.new(row[2].to_s.strip) rescue nil
       unless item_price
       	@parse_errors << "No item price provided in #{i.ordinalize} line"
       	next
@@ -56,7 +56,13 @@ class SalesImport < ActiveRecord::Base
       
       total_revenue += quantity * item_price
 
-      merchant_name = row[6].to_s.strip
+      merchant_address = row[4].to_s.strip
+      unless merchant_address
+        @parse_errors << "No merchant address provided in #{i.ordinalize} line"
+        next
+      end
+
+      merchant_name = row[5].to_s.strip
       unless merchant_name
       	@parse_errors << "No merchant name provided in #{i.ordinalize} line"
       	next
