@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 1.2'
 group :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem "shoulda-matchers"
 end
 
 group :doc do
@@ -41,3 +42,5 @@ group :doc do
 end
 
 gem 'roo'
+
+gem 'money-rails'

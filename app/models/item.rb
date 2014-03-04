@@ -2,7 +2,7 @@ class Item < ActiveRecord::Base
 	has_many :sales
   	validates_presence_of :description, :price
   	validates_numericality_of :price, greater_than: 0
-
+  	
 # == Schema Information
 #
 # Table name: items

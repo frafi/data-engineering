@@ -2,6 +2,6 @@
 
 %p
   %b Gross Revenue of items in uploaded file:
-  = @sales_import.gross_revenue
+  = humanized_money_with_symbol(@sales_import.gross_revenue)
 
 = link_to 'Back', new_sales_import_path

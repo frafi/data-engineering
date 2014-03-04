@@ -4,7 +4,7 @@ class CreateSalesImports < ActiveRecord::Migration
       t.string :document_file_name
       t.string :document_content_type
       t.integer :document_file_size
-      t.decimal :gross_revenue
+      t.decimal :gross_revenue, null: false, default: 0
 
       t.timestamps
     end

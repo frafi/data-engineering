@@ -2,20 +2,22 @@ class SalesImport < ActiveRecord::Base
   after_save :parse_document!
 
   validates_presence_of :document_file_name, :document_content_type, :document_file_size, :gross_revenue
-  validates :gross_revenue, numericality: { greater_than: 0 }
+  validates :gross_revenue, numericality: { greater_than_or_equal_to: 0 }
 
   attr_accessor :doc_file_system_path
 
   def parse_document!
     @successes = 0
     gross_revenue = 0.0
-    @parse_errors = []
+    self.parse_errors = []
     total_revenue = import_data!
     update_column(:gross_revenue, total_revenue) unless @successes.zero? and @parse_errors.empty?
     Rails.logger.debug "Total is #{total_revenue}"
   end
 
   private 
+
+  attr_accessor :parse_errors
 
   def open_data_file
     parse_errors << "Unable to open the file #{doc_file_system_path}" unless doc_file_system_path

@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20140304003650) do
     t.string   "document_file_name"
     t.string   "document_content_type"
     t.integer  "document_file_size"
-    t.decimal  "gross_revenue"
+    t.decimal  "gross_revenue",         default: 0.0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
