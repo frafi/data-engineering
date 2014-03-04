@@ -1,5 +1,7 @@
 # Project Description 
-This is a simple web application that allows user to upload a tab-delimited file containing sales data. If upload is successful, the gross revenue (or sales) from the uploaded file is displayed. It uses Rails 4.0.3, Ruby 2.0, SQLite 3.0, HAML, RSpec, Factory Girl, Money and Roo gems. 
+This is a simple web application that allows user to upload a tab-delimited file containing sales data. If upload is successful, the gross revenue (or sales) from the uploaded file is displayed. 
+
+Dependencies: Rails 4.0.3, Ruby 2.0, SQLite 3.0, HAML, RSpec, FactoryGirl, Money, ruby-openid, open\_id\_authentication, and Roo gems. 
 
 ## Prerequisites
 Install Ruby 2.0.0 (or later) version. You can do this with Ruby Version Manager (RVM) with the following command:

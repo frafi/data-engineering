@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140304003650) do
+ActiveRecord::Schema.define(version: 20140304183602) do
 
   create_table "items", force: true do |t|
     t.string   "description"
@@ -41,6 +41,28 @@ ActiveRecord::Schema.define(version: 20140304003650) do
     t.string   "document_content_type"
     t.integer  "document_file_size"
     t.decimal  "gross_revenue",         default: 0.0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sessions", force: true do |t|
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email",                          null: false
+    t.string   "crypted_password",               null: false
+    t.string   "persistence_token",              null: false
+    t.integer  "login_count",        default: 0, null: false
+    t.integer  "failed_login_count", default: 0, null: false
+    t.datetime "last_request_at"
+    t.datetime "current_login_at"
+    t.datetime "last_login_at"
+    t.string   "current_login_ip"
+    t.string   "last_login_ip"
+    t.string   "identity_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -44,3 +44,5 @@ end
 gem 'roo'
 
 gem 'money-rails'
+
+gem "authlogic", :git => "git://github.com/binarylogic/authlogic.git"
