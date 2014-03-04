@@ -1,6 +1,8 @@
 class Merchant < ActiveRecord::Base
 	has_many :sales
 
+  	validates_presence_of :name, :address
+
 # == Schema Information
 #
 # Table name: merchants

@@ -1,6 +1,9 @@
 class SalesImport < ActiveRecord::Base
   after_save :parse_document!
 
+  validates_presence_of :document_file_name, :document_content_type, :document_file_size, :gross_revenue
+  validates :gross_revenue, numericality: { greater_than: 0 }
+
   attr_accessor :doc_file_system_path
 
   def parse_document!
