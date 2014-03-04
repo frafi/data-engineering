@@ -4,7 +4,7 @@ This is a simple web application that allows user to upload a tab-delimited file
 ## Prerequisites
 Install Ruby 2.0.0 (or later) version. You can do this with Ruby Version Manager (RVM) with the following command:
 
-   rvm install 2.0.0
+   rvm install 2.0.0  
    rvm use 2.0.0 --default
 
 ## Deployment Instructions
