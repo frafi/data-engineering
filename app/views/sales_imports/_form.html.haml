@@ -1,0 +1,13 @@
+= form_for @sales_import, html: {multipart: true} do |f|
+  - if @sales_import.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@sales_import.errors.count, "error")} prevented the Sales data from being imported:"
+      %ul
+        - @sales_import.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label "Select tab delimited file to import"
+    %br
+    = f.file_field :document
+  .actions
+    = f.submit 'Save'
